@@ -11,7 +11,7 @@ const get = () => {
         content += `
         <div class="item">
         <div class="item-photo">
-            <img src="${restaurantData[i].pictureId}" alt="">
+            <img src="${restaurantData[i].pictureId}" alt="${restaurantData[i].name}">
         </div>
         <div class="item-description radius-top-left radius-top-right" style="padding: 1rem;">
             <p><i class="fas fa-map-marker-alt"></i> ${restaurantData[i].city}</p>

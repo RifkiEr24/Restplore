@@ -55,6 +55,8 @@ nav {
 }
 
 ul {
+  margin: 0;
+ 
   list-style: none;
 
 }
@@ -63,10 +65,14 @@ ul {
   display: list-item;
   width: 100%;
   text-align: left;
+ 
+}
+.nav-link{
+  display: inline-block;
   min-width: 44px;
   min-height: 44px;
+  padding: 10px;
 }
-
 .nav-link:focus {
   outline: 2px solid orange;
   padding: 25px;
@@ -85,11 +91,12 @@ a {
 #hamburger {
   min-width: 44px;
   min-height: 44px;
+  width: 44px;
+  height: auto;
   font-size: 32px;
   background-color: black;
   color: white;
-  text-align: right;
-  margin-right: 20px;
+  margin-left: auto;
   display: block;
 }
 
