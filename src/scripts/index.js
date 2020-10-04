@@ -1,8 +1,23 @@
+/* eslint-disable no-unused-vars */
 import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main.css';
-import '../styles/responsive.css';
-import './main.js';
-import get from './getData.js';
+import '../styles/main.sass';
+import '../styles/responsive.sass';
 import '@fortawesome/fontawesome-free/js/all';
-console.log('Hello Coders! :)');
-get();
+import App from './views/app';
+import swRegister from './utils/sw-register';
+
+
+const app = new App({
+  button: document.querySelector('#hamburger'),
+  drawer: document.querySelector('#drawer'),
+  content: document.querySelector('main'),
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});

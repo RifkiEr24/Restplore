@@ -1,0 +1,61 @@
+/* Tablet */
+@media (min-width: 768px) 
+    .title 
+        font-size: 2rem
+        font-weight: bold
+
+    .headline
+        flex-direction: row
+  
+    .restaurant-list
+        flex-direction: row
+  
+    .item
+        width: calc(50% - 40px)
+    
+    #hamburger
+        display: none
+    
+    .nav
+        display: flex
+        -webkit-transform: translate(0, 0)
+        transform: translate(0, 0)
+        width: 100%
+        background-color: black
+        height: auto 
+        position: unset
+    
+    ul
+        margin-left: auto
+        margin-right: 25px
+    
+    .nav-item 
+        display: inline
+        margin-right: 25px
+    
+    .nav-link
+        padding: 25px
+    
+    .brand
+        display: block
+    
+
+    .info-group
+        &.detail
+            flex-direction: row
+/* Desktop */
+@media (min-width: 1140px) 
+    .restaurant-detail-upper
+        flex-direction: row
+    
+    .restaurant-detail-upper .restaurant-image,.restaurant-information
+        width: 100%
+  
+    .headline
+        flex-direction: row
+    
+    .item
+        width: calc((100% / 3) - 40px)
+        max-width: 100%
+    
+    

@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
+const {InjectManifest} = require('workbox-webpack-plugin');
 const path = require('path');
+
 
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
@@ -11,20 +14,23 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         use: [
+          'style-loader',
+          'css-loader',
           {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
+            loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require('sass'),
+            },
           },
         ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,
         use: [
-            'file-loader',
+          'file-loader',
         ],
       },
     ],
@@ -41,6 +47,28 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new WebpackPwaManifest({
+      name: 'Restaurant Explore',
+      short_name: 'Restplore',
+      description: 'Explore restoran sepenjuru Indonesia!',
+      background_color: '#ffffff',
+      start_url: '/index.html',
+      display: 'standalone',
+      crossorigin: 'use-credentials',
+      icons: [
+        {
+          src: path.resolve(__dirname, 'src/public/icons/icon.png'),
+          sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+          type: 'image/png',
+          purpose: 'any maskable',
+          destination: path.join('images', 'icons'),
+          ios: true,
+        },
+      ],
+    }),
+    new InjectManifest({
+      swSrc: './src/scripts/sw.js',
     }),
   ],
 };

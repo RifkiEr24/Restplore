@@ -1,0 +1,47 @@
+{
+  "icons": [
+    {
+      "src": "images/icons/icon_512x512.be2b77822fb3da7acaa02f402f677522.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon_384x384.da3fcdaad6b255449f0b47f82f2f077c.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon_256x256.60651f7d65a9fc08ebddd981b566346a.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon_192x192.d93e473a50e830aabcdd2d2af8bcaf19.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon_128x128.aa7c4c75585b5bbe4cd3ac8e2e578dae.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icons/icon_96x96.b517fb0a6c0859dae3e9775dcba6d8af.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "Restaurant Explore",
+  "short_name": "Restplore",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/index.html",
+  "description": "Explore restoran sepenjuru Indonesia!",
+  "background_color": "#ffffff"
+}

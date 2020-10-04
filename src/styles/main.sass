@@ -1,0 +1,357 @@
+@import mixin
+
+* 
+  font-family: 'Nunito Sans', sans-serif
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+
+body,html 
+  scroll-behavior: smooth
+  background-color: black
+  margin: 0
+  padding: 0
+  position: relative
+
+
+::-webkit-scrollbar 
+  width: 10px
+
+
+::-webkit-scrollbar-track 
+  background: #f1f1f1
+
+
+::-webkit-scrollbar-thumb 
+  background: #1b1b1b
+  border-radius: 20px
+
+
+img 
+  width: 100%
+
+.rounded
+  border-radius: 35px
+
+.center
+  text-align: center
+
+/* SKIP LINK */
+.skip-link 
+  position: absolute
+  top: -40px
+  left: 0
+  background-color: #1b1b1b
+  color: white
+  padding: 8px
+  z-index: 100
+  &:focus
+    top: 0
+
+/* NAV */
+nav 
+  display: flex
+  width: 100%
+
+
+a,p,h2,h3,h4
+  color: white
+
+ul 
+  margin: 0
+  list-style: none
+
+.nav-item 
+  display: list-item
+  width: 100%
+  text-align: left
+ 
+.nav-link
+  display: inline-block
+  min-width: 44px
+  min-height: 44px
+  padding: 10px
+  &:focus
+    outline: 2px solid orange
+    padding: 25px
+    background-color: white
+    color: black
+    transition: 0.5s
+
+a 
+  color: white
+  text-decoration: none
+
+
+
+#hamburger 
+  min-width: 44px
+  min-height: 44px
+  width: 44px
+  height: auto
+  font-size: 32px
+  background-color: black
+  color: white
+  margin-left: auto
+  display: block
+
+
+.nav 
+  font-size: 18px
+  z-index: 10
+  height: 100%
+  background-color: #1b1b1b
+  width: 200px
+  position: absolute
+  -webkit-transform: translate(-300px, 0)
+  transform: translate(-300px, 0)
+  transition: transform 0.3s ease
+
+.open 
+  -webkit-transform: translate(0, 0)
+  transform: translate(0, 0)
+
+
+.brand 
+  display: none
+
+
+.brand-name 
+  font-size: 21px
+  text-transform: uppercase
+  font-weight: bold
+
+
+/* HERO */
+.hero 
+  display: flex
+  align-items: center
+  min-height: 500px
+  width: 100%
+  text-align: center
+  background-image: url('./../public/images/heros/heroimage.jpg')
+  background-position: center
+  background-size: cover
+  background-color: black
+  box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.65)
+
+
+.hero_inner 
+  margin: 0 auto
+  max-width: 100%
+  padding: 16px
+
+
+.hero__title 
+
+  color: #fff
+  font-weight: 500
+  font-size: 36px
+
+
+.hero__tagline 
+
+  color: #fff
+  margin-top: 16px
+  font-size: 18px
+  font-weight: 300
+
+
+/* Button */
+.button 
+  display: inline-flex
+  min-width: 44px
+  min-height: 44px
+  transition: 0.5s
+  padding: 10px 20px
+  border: 2px solid #BFC0C0
+  background: none
+  color: white
+  text-transform: uppercase
+  text-decoration: none
+  font-size: .8em
+  letter-spacing: 1.5px
+  &:focus
+    background: white
+    color: black
+    outline: 2px solid orange
+  &:hover
+    background: white
+    color: black 
+  
+/* CONTENT */
+main 
+  min-height: 100vh
+
+
+.content 
+  padding: 2.5rem
+
+
+/* HEADLINE */
+.headline 
+  display: flex
+  flex-direction: column
+
+
+.headline-photo 
+  margin: 20px
+  display: flex
+  flex: 50%
+
+
+.img-flex-container
+  display: flex
+
+.img-flex
+  flex: 50% 
+  padding: 10px
+
+.headline-article 
+  padding: 0px 20px 20px 20px
+  flex: 50%
+
+
+.title 
+  font-size: 1.3rem
+  font-weight: bold
+
+
+.description 
+  font-size: 16px
+
+
+/* RESTAURANT */
+
+.restaurant-list 
+  display: flex
+  flex-wrap: wrap
+  gap: 40px
+  flex-direction: column
+
+
+.restaurant-title 
+  font-size: 21px
+
+
+.item 
+  position: relative
+  background-color: #1b1b1b
+  border-radius: 35px
+  width: calc(100%)
+  &:hover>.item-description 
+    -webkit-transform: translate(0, -100px)
+    transform: translate(0, -100px)
+
+.item-photo img 
+  border-radius: 35px
+
+.item-description 
+  border-radius: 35px
+  background-color: #1b1b1b
+  -webkit-transform: translate(0, 0)
+  transform: translate(0, 0)
+  transition: 0.5s
+
+.info-group
+  display: flex
+  justify-content: space-between
+  &.detail
+    flex-direction: column
+    gap: 10px
+
+
+.rating 
+  font-size: 34px
+  text-align: center
+
+.link-detail
+  min-width: 44px
+  min-height: 44px
+  position: absolute
+  border:2px solid white
+  padding: 1.5rem
+  transition: 0.3s
+  border-radius: 20px 20px 60px 20px
+  background-color: #1b1b1b
+  margin-bottom: -35px
+  margin-right: 20px
+  right: 0
+  font-size: 20px
+  bottom: 0
+  z-index: 2
+  &:focus
+    color: black !important
+    background-color: white
+    outline: 2px solid orange
+    & + .item-description
+      -webkit-transform: translate(0, -100px)
+      transform: translate(0, -100px)
+
+/* DETAIL PAGE */
+.restaurant-detail
+  padding: 2rem
+
+.restaurant-detail-container
+  background-color: #1b1b1b
+  padding: 1rem
+  border-radius: 25px
+
+.restaurant-detail-upper
+  gap: 40px
+  display: flex
+  flex-direction: column
+
+.category-group
+  display: flex
+  gap: 15px  
+.category-item
+  background-color: #32332f
+  border: 1px solid white
+  padding: 10px
+.restaurant-detail-menu
+  display: flex
+  gap: 20px
+.food,.drink
+  width: 50%  
+
+.menu
+  border-bottom: 1px solid white
+  max-width: 20rem
+  margin-left: auto
+  margin-right: auto
+
+.review-item
+  background-color: #1b1b1b
+
+.name
+  font-weight: bold
+.time
+  font-size: 12px
+.review-form
+  display: flex
+  flex-direction: column
+
+input,textarea
+  background-color: black
+  border: 0px
+  color: white
+  &::placeholder
+    color: white
+
+//like 
+  
+.like
+  min-width: 44px
+  min-height: 44px
+  font-size: 15pt
+  color: white
+  background: none
+  border: 2px solid white
+  border-radius: 50%
+/* FOOTER */
+footer 
+  background-color: #1b1b1b
+  width: 100%
+  text-align: center
