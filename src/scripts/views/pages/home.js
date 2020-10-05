@@ -2,10 +2,11 @@
 /* eslint-disable max-len */
 import restaurantData from '../../data/restaurantdatadb-source';
 import {createRestaurantItemTemplate} from '../templates/template-creator';
+import './../components/loading';
 const Home = {
   async render() {
     return `
-    <div class="hero">
+<div class="hero">
     <div class="hero_inner">
         <h1 class="hero__title">Restplore</h1>
         <p class="hero__tagline">Cari dan temukan restoran di berbagai penjuru Indonesia</p>
@@ -38,7 +39,8 @@ const Home = {
         <div class="restaurant" id="maincontent">
             <p class="title mt-2">Restoran Populer</p>
             <div class="restaurant-list mt-5">
-
+            <loading-svg></loading-svg>
+            <h2 class="center">Loading Page, Harap Menunggu</h2>
             </div>
         </div>
     </article>
@@ -49,9 +51,21 @@ const Home = {
   async afterRender() {
     const restaurants = await restaurantData.restaurantList();
     const restaurantContainer = document.querySelector('.restaurant-list');
+    if (restaurants) {
+      this.successFetch(restaurants, restaurantContainer);
+    } else {
+      this.failedFetch(restaurantContainer);
+    }
+  },
+  async successFetch(restaurants, restaurantContainer) {
+    restaurantContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });
+  },
+
+  async failedFetch(restaurantContainer) {
+    restaurantContainer.innerHTML = createPageNotFoundTemplate();
   },
 };
 

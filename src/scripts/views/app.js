@@ -1,9 +1,12 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable require-jsdoc */
-import DrawerInitiator from '../utils/drawer-initiator';
+
+
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
-
+import './components/navbar';
+import './components/footer';
+import DrawerInitiator from '../utils/drawer-initiator';
 class App {
   constructor({button, drawer, content}) {
     this._button = button;
