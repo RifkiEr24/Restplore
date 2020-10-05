@@ -52,8 +52,10 @@ module.exports = {
       name: 'Restaurant Explore',
       short_name: 'Restplore',
       description: 'Explore restoran sepenjuru Indonesia!',
-      background_color: '#ffffff',
+      theme_color: '#000000',
+      background_color: '#000000',
       start_url: '/index.html',
+      ios: true,
       display: 'standalone',
       crossorigin: 'use-credentials',
       icons: [
