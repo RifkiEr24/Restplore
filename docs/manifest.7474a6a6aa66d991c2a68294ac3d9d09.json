@@ -41,7 +41,7 @@
   "short_name": "Restplore",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/index.html",
+  "start_url": "/",
   "description": "Explore restoran sepenjuru Indonesia!",
   "theme_color": "#000000",
   "background_color": "#000000"

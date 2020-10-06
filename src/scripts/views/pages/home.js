@@ -39,8 +39,10 @@ const Home = {
         <div class="restaurant" id="maincontent">
             <p class="title mt-2">Restoran Populer</p>
             <div class="restaurant-list mt-5">
+            <div class="loading">
             <loading-svg></loading-svg>
             <h2 class="center">Loading Page, Harap Menunggu</h2>
+            </div>
             </div>
         </div>
     </article>

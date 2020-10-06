@@ -54,7 +54,7 @@ module.exports = {
       description: 'Explore restoran sepenjuru Indonesia!',
       theme_color: '#000000',
       background_color: '#000000',
-      start_url: '/index.html',
+      start_url: '/',
       ios: true,
       display: 'standalone',
       crossorigin: 'use-credentials',
