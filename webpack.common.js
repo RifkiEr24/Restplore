@@ -71,6 +71,7 @@ module.exports = {
     }),
     new InjectManifest({
       swSrc: './src/scripts/sw.js',
+      swDest: 'sw.js',
     }),
   ],
 };

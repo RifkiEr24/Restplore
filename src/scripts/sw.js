@@ -12,6 +12,7 @@ import CONFIG from './globals/config';
 skipWaiting();
 clientsClaim();
 
+setCacheNameDetails(CONFIG.CACHE_NAME);
 precacheAndRoute(self.__WB_MANIFEST, {
   ignoreUrlParametersMatching: [/.*/],
 });
