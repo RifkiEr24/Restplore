@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
-
+import CONFIG from './../../globals/config';
 const createPageNotFoundTemplate = () => `
 <p class="center"><i class="far fa-nothing" aria-hidden="true"></i></p>
 <p class="center mt-2">Maaf, Halaman yang anda tuju tidak dapat ditemukan atau terjadi kesalahan.</p>
@@ -40,7 +40,7 @@ const createRestaurantDetailTemplate = (restaurant, category, food, drink) => `
       <div class="restaurant-detail-upper">
         <div class="pl-3 pr-3 pt-3 restaurant-image">
           <img class="rounded"
-            src="https://dicoding-restaurant-api.el.r.appspot.com/images/large/${restaurant.pictureId}">
+            src="${CONFIG.BASE_IMG_URL}/large/${restaurant.pictureId}" alt="${restaurant.name}">
         </div>
         <div class="p-3 restaurant-information">
 
@@ -79,8 +79,10 @@ const createRestaurantDetailTemplate = (restaurant, category, food, drink) => `
        <h4 class="pl-2 mt-2">Tambahkan Komentar Mu Juga!</h4>
        <div class="review-item mt-2 p-2 rounded">
          <form action="" class="review-form">
-           <input type="text " class="p-2 rounded" placeholder="Masukkan Nama Kamu">
-           <textarea class="mt-2 p-2 rounded" placeholder="Masukkan Review Kamu"></textarea>
+           <input type="text" class="p-2 rounded" aria-label="Name" name="name" id="name" placeholder="Masukkan Nama Kamu.." required>
+           <textarea class="mt-2 p-2 rounded" id="review" aria-label="Review Anda" name="review" placeholder="Masukkan Review Kamu.." required></textarea>
+           <button class="review-add rounded p-2 mt-2" id="submit">Tambahkan Review</button>
+
          </form>
        </div>
      </div>
@@ -89,7 +91,7 @@ const createRestaurantDetailTemplate = (restaurant, category, food, drink) => `
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="item">
       <div class="item-photo">
-        <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/${restaurant.pictureId}"
+        <img src="${CONFIG.BASE_IMG_URL}/medium/${restaurant.pictureId}"
           alt="${restaurant.name}">
       </div>
       <a class="link-detail" href="#/detail/${restaurant.id}"><i class="fas fa-search"></i></a>

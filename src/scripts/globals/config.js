@@ -2,7 +2,7 @@
 const CONFIG = {
   KEY: 'YOUR_API_KEY',
   BASE_URL: 'https://dicoding-restaurant-api.el.r.appspot.com/',
-  DEFAULT_LANGUAGE: 'en-us',
+  BASE_IMG_URL: 'https://dicoding-restaurant-api.el.r.appspot.com/images',
   CACHE_NAME: {
     prefix: 'restplore',
     suffix: 'v1',

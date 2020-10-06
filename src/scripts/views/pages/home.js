@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import restaurantData from '../../data/restaurantdatadb-source';
-import {createRestaurantItemTemplate} from '../templates/template-creator';
+
 import './../components/loading';
 const Home = {
   async render() {
@@ -62,7 +62,10 @@ const Home = {
   async successFetch(restaurants, restaurantContainer) {
     restaurantContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+      const restaurantItem = document.createElement('restaurant-item');
+      restaurantItem.data= restaurant;
+      restaurantItem.setAttribute('class', 'item');
+      restaurantContainer.appendChild(restaurantItem);
     });
   },
 

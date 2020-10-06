@@ -6,6 +6,7 @@ import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 import './components/navbar';
 import './components/footer';
+import './components/restaurant-item';
 import DrawerInitiator from '../utils/drawer-initiator';
 class App {
   constructor({button, drawer, content}) {

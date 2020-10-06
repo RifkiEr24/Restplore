@@ -242,10 +242,12 @@ main
   background-color: #1b1b1b
   border-radius: 35px
   width: calc(100%)
+  
+div
   &:hover>.item-description 
     -webkit-transform: translate(0, -100px)
     transform: translate(0, -100px)
-
+    
 .item-photo img 
   border-radius: 35px
 
@@ -262,11 +264,6 @@ main
   &.detail
     flex-direction: column
     gap: 10px
-
-
-.rating 
-  font-size: 34px
-  text-align: center
 
 .link-detail
   min-width: 44px
@@ -290,6 +287,9 @@ main
     & + .item-description
       -webkit-transform: translate(0, -100px)
       transform: translate(0, -100px)
+  &:hover
+    color: black !important
+    background-color: white
 
 /* DETAIL PAGE */
 
@@ -307,13 +307,16 @@ main
 .category-group
   display: flex
   gap: 15px  
+
 .category-item
   background-color: #32332f
   border: 1px solid white
   padding: 10px
+
 .restaurant-detail-menu
   display: flex
   gap: 20px
+
 .food,.drink
   width: 50%  
 
@@ -328,8 +331,10 @@ main
 
 .name
   font-weight: bold
+
 .time
   font-size: 12px
+
 .review-form
   display: flex
   flex-direction: column
@@ -341,6 +346,13 @@ input,textarea
   &::placeholder
     color: white
 
+.review-add
+  background-color: black
+  color: white
+  margin-left: auto
+  margin-right: auto
+  display: block
+  border: 2px solid white
 //like 
   
 .like
@@ -351,12 +363,13 @@ input,textarea
   background: none
   border: 2px solid white
   border-radius: 50%
-
+// LOADING-EXCEPTION
 svg
   width: 20rem
   margin-left: auto
   margin-right: auto
   display: block
+  
 .loading
   margin-left: auto
   margin-right: auto
