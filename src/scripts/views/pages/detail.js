@@ -74,7 +74,7 @@ const Detail = {
   },
 
   async refreshReview(restaurantObject, reviewContainer) {
-    restaurantObject.consumerReviews.forEach((review) => {
+    restaurantObject.customerReviews.forEach((review) => {
       reviewContainer.innerHTML += createReviewTemplate(review);
     });
   },

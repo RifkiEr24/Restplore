@@ -6,9 +6,12 @@ import {createRestaurantItemTemplate} from '../templates/template-creator';
 const Like = {
   async render() {
     return `
-    <h2 class="ml-4">Restoran Favorit Kamu</h2>
+    <h2 class="center">Restoran Favorit Kamu</h2>
     <div class="restaurant-list p-5">
-
+    <div class="loading">
+      <p class="center mt-2 no-restaurant-liked">Tidak ada Restoran untuk ditampilkan</p>
+    </div>
+   
     </div>
       `;
   },
@@ -16,9 +19,12 @@ const Like = {
   async afterRender() {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurant();
     const restaurantContainer = document.querySelector('.restaurant-list');
-    restaurants.forEach((restaurant) => {
-      restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-    });
+    if (restaurants.length !== 0) {
+      restaurantContainer.innerHTML ='';
+      restaurants.forEach((restaurant) => {
+        restaurantContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+      });
+    }
   },
 };
 

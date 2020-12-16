@@ -3,9 +3,15 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const {InjectManifest} = require('workbox-webpack-plugin');
 const path = require('path');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -48,6 +54,17 @@ module.exports = {
         },
       ],
     }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50,
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
     new WebpackPwaManifest({
       name: 'Restaurant Explore',
       short_name: 'Restplore',
@@ -73,5 +90,13 @@ module.exports = {
       swSrc: './src/scripts/sw.js',
       swDest: 'sw.js',
     }),
+    new BundleAnalyzerPlugin(),
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        test: /\.js(\?.*)?$/i,
+      }),
+    ],
+  },
 };

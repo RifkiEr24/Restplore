@@ -12,11 +12,11 @@ class Navigation extends HTMLElement {
         <ul>
             <li class="nav-item"><a class="nav-link" href="#/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#/like">Favorite</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://github.com/RifkiEr24" target="_blank">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://github.com/RifkiEr24" target="_blank" rel="noopener">About Us</a></li>
 
         </ul>
     </nav>
-    <a id="hamburger">☰</a>
+    <a id="hamburger" aria-label="Hamburger">☰</a>
             `;
   }
 }

@@ -8,22 +8,58 @@ const Home = {
     return `
 <div class="hero">
     <div class="hero_inner">
+      <picture>
+          <source type="image/webp" srcset="./images/heros/heroimage-small.webp"
+          media="(max-width: 600px)">
+          <source type="image/webp" srcset="./images/heros/heroimage-large.webp"
+          media="(min-width : 601px)">
+          <img class="hero_img" src="./images/heros/heroimage-large.jpg" 
+          srcset="./images/heros/heroimage-small.jpg 480w, ./images/heros/heroimage-large.jpg 800w"
+          sizes="(max-width: 600px) 480px, 800px" alt="hero">
+      </picture>
+       
         <h1 class="hero__title">Restplore</h1>
         <p class="hero__tagline">Cari dan temukan restoran di berbagai penjuru Indonesia</p>
-            <a class="button mt-3" href="#maincontent">Explore Resto</a>
+            <a class="button explore mt-3" href="#maincontent">Explore Resto</a>
     </div>
 </div>
 <section class="content">
     <article class="headline">
         <div class="headline-photo">
             <div>
-                <img src="./images/headline/Almond.jpeg" alt="Almond">
+              <picture>
+                <source type="image/webp" srcset="./images/heros/Almond-small.webp"
+                media="(max-width: 600px)">
+                <source type="image/webp" srcset="./images/heros/Almond-large.webp"
+                media="(min-width : 601px)">
+                <img  src= "./images/heros/Almond-large.jpg" width="100%"
+                srcset="./images/heros/Almond-small.jpg 480w, ./images/heros/Almond-large.jpg 800w"
+               sizes="(max-width: 600px) 480px, 800px"   alt="Almond">
+            </picture>
+             
                 <div class="img-flex-container">
                     <div class="img-flex">
-                        <img src="./images/headline/Chicken Skin.jpeg" alt="Chicken Skin">
+                      <picture>
+                        <source type="image/webp" srcset="./images/heros/ChickenSkin-small.webp"
+                        media="(max-width: 600px)">
+                        <source type="image/webp" srcset="./images/heros/ChickenSkin-large.webp"
+                        media="(min-width : 601px)">
+                        <img src="./images/heros/ChickenSkin-large.jpg" 
+                        srcset="./images/heros/ChickenSkin-small.jpg 480w, ./images/heros/ChickenSkin-large.jpg 800w"  
+                        sizes="(max-width: 600px) 480px, 800px" alt="Chicken Skin">
+                    </picture>
                     </div>
                     <div class="img-flex">
-                        <img src="./images/headline/Spicy Katsu RB.jpeg" alt="Spicy Katsu"></div>
+                      <picture>
+                        <source type="image/webp" srcset="./images/heros/SpicyKatsu-small.webp"
+                        media="(max-width: 600px)">
+                        <source type="image/webp" srcset="./images/heros/SpicyKatsu-large.webp"
+                        media="(min-width : 601px)">
+                        <img src="./images/heros/SpicyKatsu-large.jpg" width="100%"
+                        srcset="./images/heros/SpicyKatsu-small.jpg 480w, ./images/heros/SpicyKatsu-large.jpg 800w"  
+                        sizes="(max-width: 600px) 480px, 800px" alt="Spicy Katsu"></div>
+                    </picture>
+                    
                 </div>
             </div>
         </div>

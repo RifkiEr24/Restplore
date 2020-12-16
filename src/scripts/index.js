@@ -2,10 +2,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.sass';
 import '../styles/responsive.sass';
-import '@fortawesome/fontawesome-free/js/all';
 import App from './views/app';
 import swRegister from './utils/sw-register';
-
 
 const app = new App({
   button: document.querySelector('#hamburger'),
