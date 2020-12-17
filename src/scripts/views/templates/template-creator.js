@@ -46,8 +46,7 @@ const createRestaurantDetailTemplate = (restaurant, category, food, drink) => `
     <div class="restaurant-detail-container">
       <div class="restaurant-detail-upper">
         <div class="pl-3 pr-3 pt-3 restaurant-image">
-          <img class="lazyload" class="rounded"
-            src="${CONFIG.BASE_IMG_URL}/small/${restaurant.pictureId}" alt="${restaurant.name}">
+          <img class="lazyload" class="rounded" data-src="${CONFIG.BASE_IMG_URL}/small/${restaurant.pictureId}" alt="${restaurant.name}">
         </div>
         <div class="p-3 restaurant-information">
 

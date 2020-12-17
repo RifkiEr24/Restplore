@@ -13,7 +13,7 @@ class RestaurantItem extends HTMLElement {
     this.innerHTML = `
             <div>
             <div class="item-photo">
-              <img class="lazyload" src="${CONFIG.BASE_IMG_URL}/small/${this._data.pictureId}"
+              <img class="lazyload" data-src="${CONFIG.BASE_IMG_URL}/small/${this._data.pictureId}"
                 alt="${this._data.name}">
             </div>
             <a class="link-detail"  aria-label="${this._data.name}Detail" href="#/detail/${this._data.id}">
